@@ -1,16 +1,34 @@
 ---
+import '@/styles/globals.css'
 
+import MentalAdvent from '@/components/mental-advent'
+import Footer from '@/components/footer.astro'
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		
+		<title>MentalAdvent - Calendario de Adviento para el Bienestar Mental</title>
+		<meta name="description" content="Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental. 24 días de mindfulness, gratitud y desarrollo personal." />
+		
+		<meta property="og:title" content="MentalAdvent - Calendario de Adviento para el Bienestar Mental" />
+		<meta property="og:description" content="Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mentaladvent.com" />
+		
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="MentalAdvent" />
+		<meta name="twitter:description" content="Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental." />
+		
+		<link rel="canonical" href="https://mentaladvent.com" />
+		<meta name="theme-color" content="#8B5CF6" />
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<MentalAdvent client:load />
+		<Footer />
 	</body>
 </html>
