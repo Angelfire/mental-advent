@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 const CalendarioAdviento = () => {
-  const [diaAbierto, setDiaAbierto] = useState(null);  
+  const [diaAbierto, setDiaAbierto] = useState(null);
   
   const actividades = [
     {
@@ -138,11 +138,7 @@ const CalendarioAdviento = () => {
       <p className="my-8 text-lg">Mental Advent - Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental. Cada día revela una actividad psicológica cuidadosamente diseñada, combinando prácticas de mindfulness, gratitud y desarrollo personal. Una manera única de practicar el autocuidado durante las fiestas mientras cuentas los días hasta Navidad.</p>
       
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
-        {Array.from({ length: 24 }, (_, i) => ({
-          ...actividades[i],
-          dia: i + 1,
-          color: `bg-gradient-to-br from-${['red', 'blue', 'purple', 'green'][i % 4]}-50 to-${['pink', 'indigo', 'violet', 'emerald'][i % 4]}-100`
-        })).map((actividad) => (
+        {actividades.map((actividad) => (
           <Card 
             key={actividad.dia}
             className={`
@@ -154,14 +150,13 @@ const CalendarioAdviento = () => {
             `}
             onClick={() => setDiaAbierto(actividad)}
           >
-            <CardContent className={`
+            <CardContent className="
               p-4 
-              text-center 
-              ${actividad.color}
+              text-center
               rounded-lg
               min-h-32
               flex items-center justify-center
-            `}>
+            ">
               <div className="space-y-2">
                 <div className="text-2xl font-bold text-gray-800">{actividad.dia}</div>
                 {diaAbierto?.dia === actividad.dia && (
