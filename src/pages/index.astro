@@ -1,36 +1,15 @@
 ---
 import '@/styles/globals.css'
 
-import MentalAdvent from '@/components/mental-advent'
+import { AdventCalendar } from '@/components/advent-calendar'
 import Footer from '@/components/footer.astro'
+import Layout from '@/layouts/layout.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="author" content="Andrés Bedoya">
-		
-		<title>MentalAdvent - Calendario de Adviento para el Bienestar Mental</title>
-		<meta name="description" content="Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental. 24 días de mindfulness, gratitud y desarrollo personal." />
-		
-		<meta property="og:title" content="MentalAdvent - Calendario de Adviento para el Bienestar Mental" />
-		<meta property="og:description" content="Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental." />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://mentaladvent.com" />
-		<meta property="og:image" content="https://mentaladvent.com/mentaladvent.jpeg" />
-		
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="MentalAdvent" />
-		<meta name="twitter:description" content="Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental." />
-		<meta name="twitter:image" content="https://mentaladvent.com/mentaladvent.jpeg" />
-		
-		<link rel="canonical" href="https://mentaladvent.com" />
-		<meta name="theme-color" content="#8B5CF6" />
-	</head>
-	<body>
-		<MentalAdvent client:load />
+<Layout title="MentalAdvent - Calendario de Adviento para el Bienestar Mental">
+	<div class="min-h-screen bg-gray-50">
+		<AdventCalendar client:load />
 		<Footer />
-	</body>
-</html>
+	</div>
+</Layout>
+

@@ -5,7 +5,7 @@ import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 import { activities } from '@/data/activities';
 
-const CalendarioAdviento = () => {
+export const AdventCalendar = () => {
   const [diaAbierto, setDiaAbierto] = useState(null);
 
   return (
@@ -66,5 +66,3 @@ const CalendarioAdviento = () => {
     </div>
   );
 };
-
-export default CalendarioAdviento;
