@@ -54,7 +54,7 @@ export const AdventCalendar = () => {
   return (
     <>
       <h1 className="text-5xl leading-snug font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
-        Psychological Advent Calendar
+        Calendario de Adviento Psicológico
       </h1>
 
       <div className="my-8">
