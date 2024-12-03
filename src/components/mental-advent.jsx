@@ -137,6 +137,23 @@ const CalendarioAdviento = () => {
 
       <p className="my-8 text-lg">Mental Advent - Un calendario de adviento digital que transforma la cuenta regresiva navideña en un viaje de bienestar mental. Cada día revela una actividad psicológica cuidadosamente diseñada, combinando prácticas de mindfulness, gratitud y desarrollo personal. Una manera única de practicar el autocuidado durante las fiestas mientras cuentas los días hasta Navidad.</p>
       
+      {diaAbierto && (
+        <Alert className="my-8 bg-white shadow-lg border-l-4 border-purple-500">
+          <AlertTitle className="text-xl font-bold text-purple-700">
+            Día {diaAbierto.dia}: {diaAbierto.titulo}
+          </AlertTitle>
+          <AlertDescription className="mt-3 text-gray-700 leading-relaxed text-base">
+            {diaAbierto.descripcion}
+          </AlertDescription>
+          <Button 
+            className="mt-4 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white transition-all duration-300"
+            onClick={() => setDiaAbierto(null)}
+          >
+            Cerrar
+          </Button>
+        </Alert>
+      )}
+      
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
         {actividades.map((actividad) => (
           <Card 
@@ -167,23 +184,6 @@ const CalendarioAdviento = () => {
           </Card>
         ))}
       </div>
-      
-      {diaAbierto && (
-        <Alert className="mt-8 bg-white shadow-lg border-l-4 border-purple-500">
-          <AlertTitle className="text-xl font-bold text-purple-700">
-            Día {diaAbierto.dia}: {diaAbierto.titulo}
-          </AlertTitle>
-          <AlertDescription className="mt-3 text-gray-700 leading-relaxed text-base">
-            {diaAbierto.descripcion}
-          </AlertDescription>
-          <Button 
-            className="mt-4 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white transition-all duration-300"
-            onClick={() => setDiaAbierto(null)}
-          >
-            Cerrar
-          </Button>
-        </Alert>
-      )}
     </div>
   );
 };
