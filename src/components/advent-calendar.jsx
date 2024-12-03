@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
@@ -8,19 +8,17 @@ import { activities } from '@/data/activities';
 export const AdventCalendar = () => {
   const [diaAbierto, setDiaAbierto] = useState(null);
 
-  const handleDayClick = (activity) => {
-    setDiaAbierto(activity);
-    
-    setTimeout(() => {
+  useEffect(() => {
+    if (diaAbierto) {
       const alertElement = document.querySelector('#activity');
 
       if (alertElement) {
         const y = alertElement.getBoundingClientRect().top + window.scrollY - 30;
-        
+
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
-    }, 100);
-   };
+    }
+  }, [diaAbierto]);
 
   return (
     <>
@@ -58,7 +56,7 @@ export const AdventCalendar = () => {
               hover:shadow-lg
               ${diaAbierto?.day === activity.day ? 'ring-2 ring-purple-500' : ''}
             `}
-            onClick={() => handleDayClick(activity)}
+            onClick={() => setDiaAbierto(activity)}
           >
             <CardContent className="
               p-4 
