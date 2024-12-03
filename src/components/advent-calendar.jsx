@@ -9,7 +9,7 @@ export const AdventCalendar = () => {
   const [diaAbierto, setDiaAbierto] = useState(null);
 
   return (
-    <div className="max-w-4xl mx-auto p-8">
+    <>
       <h1 className="text-5xl leading-snug font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
         Calendario de Adviento Psicológico
       </h1>
@@ -63,6 +63,6 @@ export const AdventCalendar = () => {
           </Card>
         ))}
       </div>
-    </div>
+    </>
   );
 };

@@ -8,7 +8,9 @@ import Layout from '@/layouts/layout.astro'
 
 <Layout title="MentalAdvent - Calendario de Adviento para el Bienestar Mental">
 	<div class="min-h-screen bg-gray-50">
-		<AdventCalendar client:load />
+		<main class="max-w-4xl mx-auto p-8">
+			<AdventCalendar client:load />
+		</main>
 		<Footer />
 	</div>
 </Layout>
