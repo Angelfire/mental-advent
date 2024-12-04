@@ -25,7 +25,7 @@ export const AdventCalendar = () => {
   // Scroll to activity details when a day is opened
   useEffect(() => {
     if (openDay) {
-      const alertElement = document.querySelector('.my-8.bg-white.shadow-lg');
+      const alertElement = document.querySelector('#activity');
       if (alertElement) {
         const y = alertElement.getBoundingClientRect().top + window.scrollY - 40;
         window.scrollTo({ top: y, behavior: 'smooth' });
@@ -76,7 +76,7 @@ export const AdventCalendar = () => {
       </div>
       
       {openDay && (
-        <Alert className="my-8 bg-white shadow-lg border-l-4 border-purple-500">
+        <Alert className="my-8 bg-white shadow-lg border-l-4 border-purple-500" id="activity">
           <AlertTitle className="text-xl font-bold text-purple-700 flex items-center justify-between">
             <span>Día {openDay.day}: {openDay.title}</span>
             <Button
