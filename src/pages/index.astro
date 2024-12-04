@@ -3,11 +3,13 @@ import '@/styles/globals.css'
 
 import { AdventCalendar } from '@/components/advent-calendar'
 import Footer from '@/components/footer.astro'
+import Header from '@/components/header.astro'
 import Layout from '@/layouts/layout.astro'
 ---
 
 <Layout title="MentalAdvent - Calendario de Adviento para el Bienestar Mental">
 	<div class="min-h-screen bg-gray-50">
+		<Header />
 		<main class="max-w-4xl mx-auto p-8">
 			<AdventCalendar client:load />
 		</main>
